@@ -1,0 +1,5 @@
+
+local ohString1 = "Shoot"
+local ohBoolean2 = false
+
+game:GetService("ReplicatedStorage").GameEvents.ClientAction:FireServer(ohString1, ohBoolean2)
