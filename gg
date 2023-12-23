@@ -5,7 +5,7 @@ local camera = workspace.CurrentCamera
 local screenGui = player.PlayerGui:WaitForChild("BaseballUI") 
 local imageLabel = screenGui:WaitForChild("Cursor2") 
 
-local targetPart = workspace:WaitForChild("TargetPart") 
+local targetPart = game.Workspace:WaitForChild("Baseball") 
 
 
 local function updatePosition()
