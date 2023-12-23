@@ -1,18 +1,19 @@
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
-local targetPart = game.Workspace:WaitForChild("Baseball") 
+local camera = workspace.CurrentCamera
+
+local screenGui = player.PlayerGui:WaitForChild("BaseballUI") 
+local imageLabel = screenGui:WaitForChild("Cursor2") 
+
+local targetPart = workspace:WaitForChild("TargetPart") 
 
 
-function lockCursorToPart(part)
-   
-    local screenPos = workspace.CurrentCamera:WorldToScreenPoint(part.Position)
-    
-  
-    mouse.X = screenPos.X
-    mouse.Y = screenPos.Y
+local function updatePosition()
+    local position = camera:WorldToViewportPoint(targetPart.Position)
+    imageLabel.Position = UDim2.new(0, position.X, 0, position.Y)
 end
 
+game:GetService("RunService").RenderStepped:Connect(updatePosition)
 
-game:GetService("RunService").RenderStepped:Connect(function()
-    lockCursorToPart(targetPart)
-end)
+
+updatePosition()
