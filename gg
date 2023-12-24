@@ -9,7 +9,7 @@ local targetPart = game.Workspace:WaitForChild("Baseball")
 
 
 local function updatePosition()
-    local position = camera:WorldToViewportPoint(targetPart.Position)
+    local position = camera:WorldToScreenPoint(targetPart.Position)
     imageLabel.Position = UDim2.new(0, position.X, 0, position.Y)
 end
 
