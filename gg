@@ -1,19 +1,6 @@
-local player = game.Players.LocalPlayer
-local mouse = player:GetMouse()
-local camera = workspace.CurrentCamera
-
-local screenGui = player.PlayerGui:WaitForChild("BaseballUI") 
-local imageLabel = screenGui:WaitForChild("Cursor2") 
-
-local targetPart = game.Workspace:WaitForChild("Baseball") 
-
-
-local function updatePosition()
-    local position = camera:WorldToScreenPoint(targetPart.Position)
-    imageLabel.Position = UDim2.new(0, position.X, 0, position.Y)
+for i, v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Football" then                                                                                                                       
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, v, 0)
 end
-
-game:GetService("RunService").RenderStepped:Connect(updatePosition)
-
-
-updatePosition()
+end
+print("Loaded")
