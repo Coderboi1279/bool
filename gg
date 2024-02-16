@@ -1,1 +1,6 @@
-print(math.deg(Vector3.xAxis()))
+local x1 = Vector3.new(500,200,300)
+local x2 = Vector3.new(500,600,700)
+
+local displacement = (x1 - x2).Unit
+
+print(math.deg(Vector3.xAxis(displacement)))
