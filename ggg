@@ -21,12 +21,12 @@ local function isMoving()
 end
 print("Loaded!")
 getgenv().time1 = 0.137
-getgenv().time2 = 0.950
+
 mouse.KeyDown:Connect(function(key)
     if key == "e" then
         local ping = GetPing() / 1000 
         local standingDelay = 0.745 + getgenv().time1 * ping
-        local movingDelay = 0.815 + getgenv().time2 * ping
+        local movingDelay = 0.815 + 0.135 * ping
         if isMoving() then
             wait(movingDelay)
 
