@@ -21,7 +21,7 @@ local function isMoving()
 end
 print("Loaded!")
 getgenv().time1 = 0.137
-getgenv().time2 = 0.100
+getgenv().time2 = 0.230
 mouse.KeyDown:Connect(function(key)
     if key == "e" then
         local ping = GetPing() / 1000 
