@@ -25,8 +25,8 @@ getgenv().time1 = 0.100
 mouse.KeyDown:Connect(function(key)
     if key == "e" then
         local ping = GetPing() / 1000 
-        local standingDelay = 0.755 + getgenv().time1 * ping
-        local movingDelay = 0.870 + 0.105 * ping
+        local standingDelay = 0.760 + 0.098 * ping
+        local movingDelay = 0.875 + 0.098 * ping
         if isMoving() then
             wait(movingDelay)
 
